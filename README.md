@@ -1,4 +1,4 @@
-# Smooth Bspline-based Quaternion Interpolation for Tool Orientation
+# Smooth Bspline-based Quaternion Interpolation for Five-Axis Tool Orientation Planning
 
 MATLAB implementation of quaternion interpolation methods for smooth tool orientation in CNC machining and robotics applications.
 
@@ -12,6 +12,14 @@ MATLAB implementation of quaternion interpolation methods for smooth tool orient
   - Squad (Spherical Quadrangle Interpolation)  
   - SBQI (Spline-Based Quaternion Interpolation)
 - **Interactive Visualization**: Slider-based tool for exploring interpolation results
+
+## Method Comparison
+
+| Method | Continuity | Advantages |
+|--------|------------|------------|
+| Slerp | $C^0$ | Simple, computationally efficient |
+| Squad | $C^1$ | $C^1$ continuity and efficient |
+| **SBQI** | **$C^3$** | **Superior smoothness, optimized for 5-axis machining** |
 
 ## Quick Start
 
@@ -35,10 +43,11 @@ load('caseBlade.mat');           % Blade processing
 ```
 
 ## Project Structure
-
-- `mainFunc.m` - Main demonstration script
+-  `mainFunc.m` - Main demonstration script
+- `configs/` - Configuration files for different machining scenarios, containing all test case data files
+- `src/` - Core quaternion planning algorithms implementation
+- `utils/` - NURBS utilities from [Octave NURBS package](https://octave.sourceforge.io/nurbs/index.html)
 - `generateToolOrientationBySlerp/Squad/SBQI.m` - Interpolation implementations
-- `centripetalParameterization.m` - Curve parameterization
 - `plotToolOrientationInterpolationWithSlider.m` - Visualization module
 - `case*.mat` - Test case data files
 
