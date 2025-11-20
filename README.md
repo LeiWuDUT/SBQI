@@ -59,7 +59,3 @@ SBQI: A Smooth B-Spline-Based Quaternion Interpolation Method for $C^3$-Continuo
 
 GNU General Public License v3.0 - see [LICENSE](LICENSE) for details.
 
-## Author
-
-**Lei Wu** - Dalian University of Technology
-```
